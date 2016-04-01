@@ -1,0 +1,3 @@
+rootProject.name = 'Rcply'
+
+include ':app'
