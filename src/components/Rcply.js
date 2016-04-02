@@ -2,15 +2,16 @@ import React, {
   Component,
   StyleSheet,
   View,
-  Text
 } from 'react-native';
+
+import Navigation from './Navigation';
 
 class Rcply extends Component {
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hello, Rcply!</Text>
+        <Navigation />
       </View>
     );
   }
@@ -19,7 +20,6 @@ class Rcply extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
     backgroundColor: '#fff'
   }
 });
