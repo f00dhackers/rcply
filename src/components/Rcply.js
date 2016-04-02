@@ -97,12 +97,14 @@ class Rcply extends Component {
           <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
+        <View style={styles.drawerBtnPanelWrapper}>
         <View style={styles.drawerBtnPanel}>
           <Text style={styles.textBtn} onPress={() => Alert.alert(
             'Alert Title 2222',
             'reset',
           )}> Reset </Text>
           <Text style={styles.textBtn} onPress={() => this.refs['Filter_Drawer'].closeDrawer()}> Accept </Text>
+        </View>
         </View>
 
       </View>
@@ -155,7 +157,7 @@ const styles = StyleSheet.create({
   },
 
   drawerSub: {
-    marginBottom: 10,
+    marginBottom: 15,
     fontSize: 14,
     textAlign: 'left'
   },
@@ -165,8 +167,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
 
+  drawerBtnPanelWrapper: {
+    //position: 'absolute',
+    bottom: -75,
+  },
+
   drawerBtnPanel: {
-    marginTop: 50,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
