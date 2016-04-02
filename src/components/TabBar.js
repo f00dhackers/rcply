@@ -56,10 +56,10 @@ class TabBar extends Component {
       return 'Recipes'
       break;
       case 1:
-      return 'Ingredients'
+      return 'I Have'
       break;
       case 2:
-      return 'Shopping List'
+      return 'I Need'
       break;
       case 3:
       return 'More'
