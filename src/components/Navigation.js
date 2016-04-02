@@ -17,16 +17,16 @@ class Navigation extends Component {
             initialPage={0}
             renderTabBar={() => <TabBar />}
       >
-        <ScrollView tabLabel="list-alt">
+        <ScrollView tabLabel="list-alt" contentContainerStyle={{flex:1}}>
           <RecipesPage />
         </ScrollView>
-        <ScrollView tabLabel="home" >
+        <ScrollView tabLabel="home" contentContainerStyle={{flex:1}}>
           <IngredientsPage />
         </ScrollView>
-        <ScrollView tabLabel="shopping-basket">
+        <ScrollView tabLabel="shopping-basket" contentContainerStyle={{flex:1}}>
           <ShoppingListPage />
         </ScrollView>
-        <ScrollView tabLabel="bars">
+        <ScrollView tabLabel="bars" contentContainerStyle={{flex:1}}>
           <MorePage />
         </ScrollView>
       </ScrollableTabView>
