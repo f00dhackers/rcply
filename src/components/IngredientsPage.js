@@ -9,7 +9,7 @@ class IngredientsPage extends Component {
   render() {
     return (
         <View>
-          <Text>Recipes Page</Text>
+          <Text>Ingredients Page</Text>
         </View>
     );
   }
