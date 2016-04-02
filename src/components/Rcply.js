@@ -15,7 +15,9 @@ import React, {
 const { SwitchAndroid } = React;
 const Switch = React.createClass({
   getInitialState() {
-    return {value: false};
+    return {
+      value: false,
+    };
   },
 
   _onValueChange(value) {
@@ -33,7 +35,7 @@ const Switch = React.createClass({
 });
 
 
-class Rcply extends Component {
+class Filter extends Component {
   render() {
 
     // +++ FILTER DRAWER +++
@@ -46,22 +48,22 @@ class Rcply extends Component {
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Appetizer </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'Appetizer'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }} value={true} />
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Main Course </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'MainCourse'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Dessert </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'Dessert'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Snack </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'Snack'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <Text style={styles.drawerHead}> Category </Text>
@@ -69,40 +71,49 @@ class Rcply extends Component {
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Gluten Free </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'GlutenFree'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Under 30 minutes </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'Under30min'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Eat First </Text>
-           <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+           <Switch ref={'EatFirst'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Spicy </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'Spicy'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> Extra Spicy </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'ExtraSpicy'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.toggleBtn}> 
           <Text style={styles.drawerSub}> One Pot Wonder </Text>
-          <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
+          <Switch ref={'OnePotWonder'} style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
         <View style={styles.drawerBtnPanelWrapper}>
         <View style={styles.drawerBtnPanel}>
-          <Text style={styles.textBtn} onPress={() => Alert.alert(
-            'Alert Title 2222',
-            'reset',
-          )}> Reset </Text>
+          <Text style={styles.textBtn} onPress={() => {
+            this.refs['Appetizer'].setState({value: false});
+            this.refs['MainCourse'].setState({value: false});
+            this.refs['Dessert'].setState({value: false});
+            this.refs['Snack'].setState({value: false});
+            this.refs['GlutenFree'].setState({value: false});
+            this.refs['Under30min'].setState({value: false});
+            this.refs['EatFirst'].setState({value: false});
+            this.refs['Spicy'].setState({value: false});  
+            this.refs['ExtraSpicy'].setState({value: false});
+            this.refs['OnePotWonder'].setState({value: false});
+
+          }}> Reset </Text>
           <Text style={styles.textBtn} onPress={() => this.refs['Filter_Drawer'].closeDrawer()}> Accept </Text>
         </View>
         </View>
@@ -198,4 +209,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Rcply;
+export default Filter;
