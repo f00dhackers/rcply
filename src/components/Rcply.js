@@ -4,7 +4,9 @@ import React, {
   View,
   Icon,
   Text,
-  DrawerLayoutAndroid
+  DrawerLayoutAndroid,
+  TouchableHighlight,
+  Alert
 } from 'react-native';
 
 
@@ -25,10 +27,8 @@ const Switch = React.createClass({
 
   render() {
     return (
-      <SwitchAndroid
-        onValueChange={this._onValueChange}
-        value={this.state.value}/>
-      );
+      <SwitchAndroid onValueChange={this._onValueChange} value={this.state.value}/>
+    );
   }
 });
 
@@ -97,6 +97,14 @@ class Rcply extends Component {
           <Switch style={styles.toggleBtn} onValueChange={(val) => {console.log(val); }}/>
         </View>
 
+        <View style={styles.drawerBtnPanel}>
+          <Text style={styles.textBtn} onPress={() => Alert.alert(
+            'Alert Title 2222',
+            'reset',
+          )}> Reset </Text>
+          <Text style={styles.textBtn} onPress={() => this.refs['Filter_Drawer'].closeDrawer()}> Accept </Text>
+        </View>
+
       </View>
     );
 
@@ -106,6 +114,7 @@ class Rcply extends Component {
 
       <DrawerLayoutAndroid
         drawerWidth={300}
+        ref={'Filter_Drawer'}
         drawerPosition={DrawerLayoutAndroid.positions.Right}
         renderNavigationView={() => filterDrawer}
       >
@@ -154,6 +163,20 @@ const styles = StyleSheet.create({
   toggleBtn: {
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+
+  drawerBtnPanel: {
+    marginTop: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+
+  textBtn: {
+    fontSize: 16,
+    borderWidth: 2,
+    borderRadius: 10,
+    borderColor: '#fff'
+    //backgroundColor: '#ff0000'
   },
 
   recipeSearch: {
