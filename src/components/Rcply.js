@@ -2,9 +2,11 @@ import React, {
   Component,
   StyleSheet,
   View,
-  Text
+  Text,
+  ScrollView
 } from 'react-native';
 
+import TabBar from './TabBar';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import RecipesPage from './RecipesPage';
 import IngredientsPage from './IngredientsPage';
@@ -16,11 +18,22 @@ class Rcply extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollableTabView>
-          <RecipesPage tabLabel="Recipes" />
-          <IngredientsPage tabLabel="Ingredients" />
-          <ShoppingListPage tabLabel="Shopping List" />
-          <MorePage tabLabel="More" />
+        <ScrollableTabView
+            initialPage={0}
+            renderTabBar={() => <TabBar />}
+        >
+          <ScrollView tabLabel="list-alt">
+            <RecipesPage />
+          </ScrollView>
+          <ScrollView tabLabel="home" >
+            <IngredientsPage />
+          </ScrollView>
+          <ScrollView tabLabel="shopping-basket">
+            <ShoppingListPage />
+          </ScrollView>
+          <ScrollView tabLabel="bars">
+            <MorePage />
+          </ScrollView>
         </ScrollableTabView>
       </View>
     );
