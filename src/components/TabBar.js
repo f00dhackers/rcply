@@ -49,6 +49,24 @@ class TabBar extends Component {
      return `rgb(${red}, ${green}, ${blue})`;
      } */
 
+  // NOTE: Hackity hack, boo hardcoding
+  getTabTitle(index) {
+    switch (index) {
+      case 0:
+      return 'Recipes'
+      break;
+      case 1:
+      return 'Ingredients'
+      break;
+      case 2:
+      return 'Shopping List'
+      break;
+      case 3:
+      return 'More'
+      break;
+    }
+  }
+
   render() {
     const { activeTab } = this.props
 
@@ -72,7 +90,7 @@ class TabBar extends Component {
                    ref={(icon) => {tabIcons[i] = icon;}}
                  />
                  <Text style={activeTab === i && styles.activeTabTextColor}>
-                   Foo
+                   {this.getTabTitle(i)}
                  </Text>
                </TouchableOpacity>
              );
