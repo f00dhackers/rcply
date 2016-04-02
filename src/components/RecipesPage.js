@@ -5,12 +5,14 @@ import React, {
   Text
 } from 'react-native';
 
+import Search from './Search';
+
 class RecipesPage extends Component {
   render() {
     return (
-        <View>
-          <Text>Recipes Page</Text>
-        </View>
+      <View>
+        <Search />
+      </View>
     );
   }
 }
