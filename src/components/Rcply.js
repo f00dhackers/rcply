@@ -2,11 +2,8 @@ import React, {
   Component,
   StyleSheet,
   View,
-  Icon,
   Text,
-  DrawerLayoutAndroid,
-  TouchableHighlight,
-  Alert
+  DrawerLayoutAndroid
 } from 'react-native';
 
 
