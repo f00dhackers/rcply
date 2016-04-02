@@ -50,12 +50,15 @@ class TabBar extends Component {
      } */
 
   render() {
+    const { activeTab } = this.props
+
     const tabWidth = this.props.containerWidth / this.props.tabs.length;
     const left = this.props.scrollValue.interpolate({
       inputRange: [0, 1, ],
       outputRange: [0, tabWidth ]
     });
 
+    // TODO: Move repetitive style condition to class method.
     return (
       <View>
         <View style={[styles.tabs, this.props.style, ]}>
@@ -65,10 +68,12 @@ class TabBar extends Component {
                  <Icon
                    name={tab}
                    size={30}
-                   color={this.props.activeTab ? '#fff' : '#556f07'}
+                   color={activeTab === i ? '#fff' : '#556f07'}
                    ref={(icon) => {tabIcons[i] = icon;}}
                  />
-                 <Text>Foo</Text>
+                 <Text style={activeTab === i && styles.activeTabTextColor}>
+                   Foo
+                 </Text>
                </TouchableOpacity>
              );
            })}
@@ -85,6 +90,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingBottom: 10
   },
+  activeTabTextColor: {
+    color: '#fff'
+  },
   tabs: {
     height: 70,
     flexDirection: 'row',
@@ -95,13 +103,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     backgroundColor: '#91C11E',
     borderBottomColor: 'rgba(0,0,0,0.05)'
-  },
-  tabUnderlineStyle: {
-    position: 'absolute',
-    height: 3,
-    backgroundColor: '#3b5998',
-    bottom: 0
-  },
+  }
 });
 
 export default TabBar;
