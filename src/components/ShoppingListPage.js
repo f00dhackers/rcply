@@ -122,9 +122,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     width: 333,
     margin: 1,
-    borderBottomColor: '#000',
+    borderBottomColor: '#91c11e',
     borderStyle: 'solid',
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
   },
   shoppingListHeaderText: {
     marginLeft: 20,
