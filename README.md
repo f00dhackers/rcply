@@ -2,7 +2,7 @@
 
 ![Rcply Logo](https://raw.githubusercontent.com/f00dhackers/rcply/master/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png)
 
-People who try to adopt a special lifestyle often face the challenge of lacking creativity while cooking. Whether low carb, vegetarian, or dairy free * you are used to grab your limited set of products which are "allowed". So after a while you just get rid of cooking same meals all the time. This is where RCPLY can help you. Just add the items you already have at home, find the recipe you like and start cooking now. Or browse through delicious and healthy recipes and cook later by ordering missing ingredients directly in the app.
+People who try to adopt a special lifestyle often face the challenge of lacking creativity while cooking. Whether low carb, vegetarian, or dairy free - you are used to grab your limited set of products which are "allowed". So after a while you just get rid of cooking same meals all the time. This is where RCPLY can help you. Just add the items you already have at home, find the recipe you like and start cooking now. Or browse through delicious and healthy recipes and cook later by ordering missing ingredients directly in the app.
 
 ## Ingredients
 * Hellofresh API
