@@ -14,8 +14,7 @@ class MorePage extends Component {
           <View style={styles.listview}>
             <View style={styles.listitem}>
               <View style={styles.itemicon}>
-                <Icon style={styles.itemicon}
-                      name="user"
+                <Icon name="user"
                       size={30}
                       color="#91c11e" />
               </View>
