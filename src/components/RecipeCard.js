@@ -1,5 +1,6 @@
 import React, {
   Component,
+  PropTypes,
   Image,
   StyleSheet,
   TouchableOpacity,
@@ -10,18 +11,24 @@ import React, {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class RecipeCard extends Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+    rowid: PropTypes.string.isRequired
+  }
   render() {
+    const { data } = this.props;
+
     return(
       <View style={styles.recipeCardContainer}>
         <TouchableOpacity>
           <View style={styles.recipeCardImage}>
             <Image
                 style={{resizeMode: 'cover', height: 250, width: 333}}
-                source={{uri: 'https://s3-eu-west-1.amazonaws.com/hf-recipes/image/5551f142f8b25e78738b4567.jpg'}}
+                source={{uri: data.imageLink}}
             />
           </View>
           <View style={styles.recipeCardMetaImageContainer}>
-            <Icon
+              <Icon
                 style={styles.recipeCardMetaImage}
                 name="clock-o"
                 size={30}
@@ -39,9 +46,20 @@ class RecipeCard extends Component {
                 size={30}
                 color='#91c11e'
             />
+            { data.icon &&
+              <View style={{flexDirection: 'row'}}>
+              <Icon
+                style={styles.recipeCardMetaImage}
+                name={data.icon}
+                size={30}
+                color='#ff5922'
+              />
+              <Text style={{marginTop: 5, flex: 1}}>Sponsored</Text>
+              </View>
+            }
           </View>
           <View style={styles.recipeCardMetaTextContainer}>
-            <Text style={styles.recipeCardMetaText}>Green asparagus with tomatoes and jasmine rice</Text>
+            <Text style={styles.recipeCardMetaText}>{data.name}</Text>
           </View>
         </TouchableOpacity>
       </View>

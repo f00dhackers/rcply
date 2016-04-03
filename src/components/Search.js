@@ -1,13 +1,12 @@
 import React, {
   Component,
+  PropTypes,
   StyleSheet,
   View,
-  TextInput,
-  Alert
+  TextInput
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import config from '../../config';
 
 class Search extends Component {
   constructor(props) {
@@ -18,11 +17,12 @@ class Search extends Component {
     };
   }
 
+  static propTypes = {
+    fetchData: PropTypes.func.isRequired
+  }
+
   handleSubmit() {
-    Alert.alert(
-      'Alert!',
-      this.state.text
-    );
+    this.props.fetchData(this.state.text)
   }
 
   render() {
@@ -36,7 +36,7 @@ class Search extends Component {
         /> */}
         <TextInput
             syle={styles.searchInput}
-            placeholder="Search by ingredients..."
+            placeholder="Search by ingredient..."
             underlineColorAndroid="transparent"
             keyboardType="web-search"
             onChangeText={text => this.setState({text})}
