@@ -7,6 +7,12 @@ git clone https://github.com/f00dhackers/rcply
 npm install
 ```
 
+##### API Authentication
+```
+cp config.js.example config.js
+```
+Replace fields with the correct values.
+
 Make sure the Android Emulator is running...
 ```
 react-native run-android
