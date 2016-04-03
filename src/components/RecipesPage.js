@@ -38,7 +38,7 @@ class RecipesPage extends Component {
       .then( responseData => {
         const advertizement = {
           imageLink: 'http://bilder1.n-tv.de/img/ratgeber/origs13639436/9492732656-w1000-h960/TM5.jpg',
-          name: 'THERMOMIX TM5 - the future of cooking. Discover now!',
+          name: 'Ad:THERMOMIX TM5 - the future of cooking. Discover now!',
           icon: 'adn'
         };
 
